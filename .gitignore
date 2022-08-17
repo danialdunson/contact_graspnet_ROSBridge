@@ -6,4 +6,4 @@ checkpoints/*
 **/*.ipynb
 **/*.zip
 .vscode
-watertight/*
+watertight/*.*
