@@ -82,7 +82,7 @@ class MessagePublisher:
     self._Pred_Grasps = None
 
     testK1 = Img_Msg_Data.K
-    # Img_Msg_Data.K[:,2] = np.eye(3)[:,2]
+    # Img_Msg_Data.K[:1,:1] = np.eye(3)[:1,:1]
     # testK2 = np.eye(3) # we are using aligned images.
     # testK2[0,0] = Img_Msg_Data.K[0,0]*3
     # testK2[1,1] = Img_Msg_Data.K[1,1]*3
