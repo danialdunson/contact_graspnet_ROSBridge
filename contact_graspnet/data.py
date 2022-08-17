@@ -207,7 +207,7 @@ def regularize_pc_point_count(pc, npoints, use_farthest_point=False):
     else:
         required = npoints - pc.shape[0]
         if required > 0:
-            index = np.random.choice(range(pc.shape[0]), size=required)
+            index = np.random.choice(range(pc.shape[0]), size=required,)
             pc = np.concatenate((pc, pc[index, :]), axis=0)
     return pc
 

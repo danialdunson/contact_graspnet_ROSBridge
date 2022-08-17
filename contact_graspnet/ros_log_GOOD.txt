@@ -1,0 +1,22 @@
+###################################################################################################
+                    success debug messages for service caller and provider
+###################################################################################################
+
+contact_graspnet_env
+
+  2022-08-17 07:21:16,437     INFO: Restoring parameters from checkpoints/scene_test_2048_bs3_hor_sigma_001/model.ckpt-54054
+  2022-08-17 07:21:16,797    DEBUG: Server connected: tcp4:0.0.0.0:9090
+  2022-08-17 07:21:16,797     INFO: Connection to ROS ready.
+  2022-08-17 07:21:16,797    DEBUG: Sending ROS message|<pre>b'{"op": "advertise_service", "type": "std_srvs/Trigger", "service": "/contact_graspnet/request_inference"}'</pre>
+  2022-08-17 07:21:16,797    DEBUG: Sending ROS message|<pre>b'{"op": "advertise", "id": "advertise:/contact_graspnet/output_poses:1", "type": "std_msgs/Float32MultiArray", "topic": "/contact_graspnet/output_poses", "latch": false, "queue_size": 100}'</pre>
+
+
+ROS-MELODIC 
+  [service caller](https://github.com/danialdunson/arlo_simulations/blob/main/arlo_gazebo/scripts/contact_grspnet2movegroup.py)
+
+  process[wx250s/contact_grspnet2movegroup-1]: started with pid [9370]
+  [ INFO] [1660735495.083106596]: Loading robot model 'wx250s'...
+  [ INFO] [1660735495.083761323]: No root/virtual joint specified in SRDF. Assuming fixed joint
+  [ INFO] [1660735496.395233666, 472.144000000]: Ready to take commands for planning group interbotix_arm.
+  [ INFO] [1660735496.715923112, 472.421000000]: Ready to take commands for planning group interbotix_gripper.
+  request inference? (y/n) Press Enter to continue...

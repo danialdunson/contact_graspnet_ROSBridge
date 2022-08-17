@@ -3,4 +3,7 @@ checkpoints/*
 *.npz
 **/*.pyc
 **/__pycache__
+**/*.ipynb
+**/*.zip
 .vscode
+watertight/*

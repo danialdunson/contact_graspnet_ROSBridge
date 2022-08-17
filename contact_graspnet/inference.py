@@ -6,6 +6,10 @@ import time
 import glob
 import cv2
 
+"""         Command line
+python contact_graspnet/inference.py --np_path=test_data/0.npy                               --forward_passes=5                               --z_range=[0.2,1.1]
+"""
+
 import tensorflow.compat.v1 as tf
 tf.disable_eager_execution()
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
@@ -76,9 +80,14 @@ def inference(global_config, checkpoint_dir, input_paths, K=None, local_regions=
         np.savez('results/predictions_{}'.format(os.path.basename(p.replace('png','npz').replace('npy','npz'))), 
                   pred_grasps_cam=pred_grasps_cam, scores=scores, contact_pts=contact_pts)
 
+        np.save('results/pred_grasps_cam_{}'.format(os.path.basename(p.replace('png','npy').replace('npz','npy'))), np.array(list(pred_grasps_cam.items())[0][1]))
+        np.save('results/scores_{}'.format(os.path.basename(p.replace('png','npy').replace('npz','npy'))), np.array(list(scores.items())[0][1]))        
+        np.save('results/contact_pts_{}'.format(os.path.basename(p.replace('png','npy').replace('npz','npy'))), np.array(list(contact_pts.items())[0][1]))
+
         # Visualize results          
         show_image(rgb, segmap)
         visualize_grasps(pc_full, pred_grasps_cam, scores, plot_opencv_cam=True, pc_colors=pc_colors)
+        print('Done')
         
     if not glob.glob(input_paths):
         print('No files found: ', input_paths)
