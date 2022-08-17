@@ -84,8 +84,8 @@ class PandaGripper(object):
             q = self.default_pregrasp_configuration
 
         self.q = q
-        fn_base = os.path.join(root_folder, 'gripper_models/panda_gripper/hand.stl')
-        fn_finger = os.path.join(root_folder, 'gripper_models/panda_gripper/finger.stl')
+        fn_base = os.path.join(root_folder, 'gripper_models/wx250s/wx250s_gripper.stl')
+        fn_finger = os.path.join(root_folder, 'gripper_models/wx250s/wx250s_gripper_finger.stl')
 
         self.base = trimesh.load(fn_base)
         self.finger_l = trimesh.load(fn_finger)

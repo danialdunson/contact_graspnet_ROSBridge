@@ -102,7 +102,7 @@ def visualize_grasps(full_pc, pred_grasps_cam, scores, plot_opencv_cam=False, pc
                             gripper_openings=[gripper_openings_k[np.argmax(scores[k])]], tube_radius=0.0025)    
             else:
                 colors3 = [cm2(0.5*score)[:3] for score in scores[k]]
-                draw_grasps(pred_grasps_cam[k], np.eye(4), colors=colors3, gripper_openings=gripper_openings_k)    
+                draw_grasps(pred_grasps_cam[k], np.eye(4), colors=colors3, gripper_openings=gripper_openings_k)    #show gripper mesh = true here to view the gripper mesh
     mlab.show()
 
 def draw_pc_with_colors(pc, pc_colors=None, single_color=(0.3,0.3,0.3), mode='2dsquare', scale_factor=0.0018):
@@ -140,7 +140,7 @@ def draw_pc_with_colors(pc, pc_colors=None, single_color=(0.3,0.3,0.3), mode='2d
         points_mlab.module_manager.scalar_lut_manager.lut.number_of_colors = rgb_lut.shape[0]
         points_mlab.module_manager.scalar_lut_manager.lut.table = rgb_lut
 
-def draw_grasps(grasps, cam_pose, gripper_openings, color=(0,1.,0), colors=None, show_gripper_mesh=False, tube_radius=0.0008):
+def draw_grasps(grasps, cam_pose, gripper_openings, color=(0,1.,0), colors=None, show_gripper_mesh=True, tube_radius=0.0008):
     """
     Draws wireframe grasps from given camera pose and with given gripper openings
 
