@@ -104,8 +104,6 @@ class MessagePublisher:
       return False
 
   def service_handler_callback(self, request, response):
-    global asdf  
-    asdf = response
     """
     Subscribes to the image topic and exits.
     
