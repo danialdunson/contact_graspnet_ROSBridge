@@ -1,21 +1,15 @@
 import logging
 # import roslibpy
-from roslibpy import Header, Ros, Time, Topic, Service, ServiceRequest, ServiceResponse, Message, loginfo#, set_rosapi_timeout
+from roslibpy import Header, Ros, Time, Topic, Service, ServiceRequest, ServiceResponse, Message, loginfo #, set_rosapi_timeout
 from roslibpy.core import LOGGER
 import time
 from ros_publisher_test import Msg_pub, Msg_Data, receive_image #, inference_init, inference_test
-from rosstarter import Img_Msg_Data#, inference_test, tf_config, inference_init #,receive_image
+from rosstarter import Img_Msg_Data #, inference_test, tf_config, inference_init #,receive_image
 
 # Configure logging to high verbosity (DEBUG)
 fmt = '%(asctime)s %(levelname)8s: %(message)s'
 logging.basicConfig(format=fmt, level=logging.DEBUG)
 log = logging.getLogger(__name__)
-
-
-##############################################################################################################################
-# This file was created only to test the functionality of the code. 
-##############################################################################################################################
-
 
 class listener:
     def __init__(self):

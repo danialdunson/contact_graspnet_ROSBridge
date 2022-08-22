@@ -2,8 +2,6 @@
 # This file was created only to test the image subscription and inference model settings 
 ##############################################################################################################################
 
-
-
 # inference.py imports
 import os
 import sys
