@@ -1,5 +1,5 @@
 ##############################################################################################################################
-# hello-world-talker.py depends on this file.
+# ros_ServiceProvider.py depends on this file.
 ##############################################################################################################################
 #  This is the graspnet_ros node that communicates over the rosbridge to the master. It subscribes to the rgb/depth image and the camera info topics. It then publishes the grasp candidates to the graspnet_ros topic. Img_Msg_Data is a class that stores the data that is received from the topics. tf_config is a class that stores the configuration parameters for the graspnet_ros node.
 
@@ -215,12 +215,12 @@ def inference_test(sess=tf_config.sess, grasp_estimator=tf_config.grasp_estimato
   np.save('results/pred_grasps_cam_{}'.format(os.path.basename(p.replace('png','npy').replace('npz','npy'))), np.array(list(pred_grasps_cam.items())[0][1]))
   print('Done Saving')
 
-  # Visualize results          
-  # show_image(Img_Msg_Data.rgb, segmap=None)
-  # visualize_grasps(pc_full, pred_grasps_cam, scores, plot_opencv_cam=True, pc_colors=pc_colors)
-  # print('Inference Done')
-
-  # prepare Msg_pub.pred_grasps_dict for publishing
+  # Visualize results - uncomment to visualize results          
+  show_image(Img_Msg_Data.rgb, segmap=None)
+  visualize_grasps(pc_full, pred_grasps_cam, scores, plot_opencv_cam=True, pc_colors=pc_colors)
+  # print('Inference Done\n prepare Msg_pub.pred_grasps_dict for publishing')
+  
+  # Publish the grasp candidates
   Msg_pub.pred_grasps_dict = {
       'header': Msg_pub.pred_grasps_header,
       'PoseArray': Msg_pub.pred_grasps_cam,
