@@ -10,9 +10,9 @@
   year={2021}
 }
 ```
-Start the service call provider with:
+from repo root, Start the service call provider with:
 ```bash
-conda activate contact_graspnet_env
+conda activate contact_graspnet_segment_ros_env
 python contact_graspnet/ros_ServiceProvider.py
 ```
 <br/>We can launch a [service caller](https://github.com/danialdunson/arlo_simulations/blob/main/arlo_gazebo/scripts/contact_grspnet2movegroup.py), node from the catkin_workspace environment: 
