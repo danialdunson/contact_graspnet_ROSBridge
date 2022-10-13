@@ -27,7 +27,6 @@ from contact_grasp_estimator import GraspEstimator
 from visualization_utils import visualize_grasps, show_image
 
 # Rosbridge_node imports
-import rosbridge_library
 import rosbridge_msgs.msg
 import sensor_msgs.msg
 import std_msgs.msg
@@ -297,50 +296,3 @@ if __name__ == '__main__':
   print('pid: %s'%(str(os.getpid())))
 
   main()
-
-# ----------------------------------------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------------------------
-# -------------------------------------------   IGNORE BELOW    --------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------------------------
-
-
-# listener = roslibpy.Topic(ros, '/wx250s/rtabmap/rgbd_image', 'rtabmap_ros/RGBDImage')
-# Topic = roslibpy.Topic(ros, '/wx250s/camera/depth/image_raw', 'sensor_msgs/Image')
-
-# # create a geometry_msgs/Twist message for /cmd_vel
-# cmd_vel_msg = geometry_msgs.msg.Twist()
-
-# # set cmd_vel_msg values to test
-# cmd_vel_msg.linear.x = 0.5
-# cmd_vel_msg.linear.y = 0.0
-# cmd_vel_msg.linear.z = 0.0
-# cmd_vel_msg.angular.x = 0.0
-# cmd_vel_msg.angular.y = 0.0
-# cmd_vel_msg.angular.z = 1.0
-
-# # create a new ros publisher to publish cmd_vel_msg
-# cmd_vel_topic = roslibpy.Topic(ros, '/cmd_vel', 'geometry_msgs/Twist')
-# cmd_vel_topic.advertise()
-# mycustom_msg = "linear:\n  x: 0.0 \n  y: 0.0 \n  z: 0.0 \n angular:\n  x: 0.0 \n  y: 0.0 \n  z: 0.0" 
-# # publish the message
-# cmd_vel_topic.publish(roslibpy.Message({mycustom_msg}))
-
-# create a new rosbridge_library.Service object
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps', 'grasp_estimator/GetGrasps')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_image', 'grasp_estimator/GetGraspsFromImage')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_depth', 'grasp_estimator/GetGraspsFromDepth')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_pc', 'grasp_estimator/GetGraspsFromPC')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_pc_and_image', 'grasp_estimator/GetGraspsFromPCAndImage')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_pc_and_depth', 'grasp_estimator/GetGraspsFromPCAndDepth')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_pc_and_image_and_depth', 'grasp_estimator/GetGraspsFromPCAndImageAndDepth')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_pc_and_image_and_depth_and_image', 'grasp_estimator/GetGraspsFromPCAndImageAndDepthAndImage')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_grasps_from_pc_and_image_and_depth_and_image_and_depth', 'grasp_estimator/GetGraspsFromPCAndImageAndDepthAndImageAndDepth')
-# rosbridge_library.Service(ros, 'grasp_estimator/get_gras
-
-# create a new rosbridge_library.Service object
-# service = rosbridge_library.Service(ros, '/grasp_estimator/get_grasps', 'grasp_estimator/GetGrasps')
-# service.call({"request": {"object_id": "object_1", "camera_id": "camera_1", "camera_pose": [0, 0, 0, 0, 0, 0, 1]}})
-# 
